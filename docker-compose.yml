@@ -53,6 +53,12 @@ services:
     networks:
       - openstates-network
 
+  webpack:
+    build:
+      context: .
+      dockerfile: docker/webpack/Dockerfile
+    volumes_from:
+      - django:rw    
   # webpack:
   #   build: .
   #   command: ./docker/webpack-start.sh
